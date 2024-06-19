@@ -3,7 +3,8 @@ import React from "react";
 function Header() {
   return (
     <>
-      <div>This is a header</div>
+      <img className="" src="logoK.svg" />
+      <div className="">CareerRoadPe.in</div>
     </>
   );
 }

@@ -14,6 +14,9 @@ import Fields from "./pages/fields menu/fields";
 import Roadmap from "./pages/roadmap/roadmap";
 import Signin from "./pages/signin/signin";
 import Signup from "./pages/signup/signup";
+
+import "./index.css";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="" element={<App />}>
