@@ -6,25 +6,32 @@ import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
-  Navigate,
+  // Navigate,
 } from "react-router-dom";
 
-import App from "./App.jsx";
-import Fields from "./pages/fields menu/fields";
-import Roadmap from "./pages/roadmap/roadmap";
-import Signin from "./pages/signin/signin";
-import Signup from "./pages/signup/signup";
+// import App from "./App.jsx";
+// import Fields from "./pages/FieldMenu/FieldMenu.jsx";
+// import Roadmap from "./pages/Roadmap/Roadmap.jsx";
+// import Signin from "./pages/signin/Signin.jsx";
+// import Signup from "./pages/signup/SignUp.jsx";
+// import NotFound from './components/NotFound';
+import App from "./App"
+import Fields from "./pages/FieldMenu/FieldMenu"
+import Roadmap from "./pages/Roadmap/Roadmap"
+import SignIn from "./pages/Signin/SignIn"
+import SignUp from "./pages/Signup/SignUp"
 
 import "./index.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="" element={<App />}>
+    <Route path="/" element={<App />}>
+      <Route index element={<Fields />} />
       <Route path="fields" element={<Fields />} />
       <Route path="roadmap" element={<Roadmap />} />
-      <Route path="signin" element={<Signin />} />
-      <Route path="signup" element={<Signup />} />
-      <Route path="" element={<Navigate to="/fields" replace />} />
+      <Route path="signin" element={<SignIn />} />
+      <Route path="signup" element={<SignUp />} />
+      {/* <Route path="*" element={<NotFound />} /> */}
     </Route>
   )
 );
