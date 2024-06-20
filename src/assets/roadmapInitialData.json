@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "title": "Pilot",
     "description": "Take to the skies! Train to become a certified pilot and fly airplanes solo.",
     "steps": [
@@ -18,6 +19,7 @@
     ]
   },
   {
+    "id": 1,
     "title": "Web Dev",
     "description": "Craft interactive experiences! Learn to code and build modern websites & web apps.",
     "steps": [
@@ -36,6 +38,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "Data Scientist",
     "description": "Uncover insights! Use programming & statistics to solve problems with data analysis.",
     "steps": [
@@ -54,6 +57,7 @@
     ]
   },
   {
+    "id": 3,
     "title": "Registered Nurse (RN)",
     "description": "Provide direct patient care, administer medications, and collaborate with healthcare teams.",
     "steps": [
@@ -72,6 +76,121 @@
     ]
   },
   {
+    "id": 4,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  },
+  {
+    "id": 10,
     "title": "Marketing Manager",
     "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
     "steps": [
