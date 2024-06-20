@@ -1,15 +1,17 @@
 import FieldOption from "../../components/FieldOption/FieldOption";
-function FieldMenu({ data }) {
-  console.log("data in fields", data);
-  return <>This is the field menu</>;
+function Fields({ data }) {
+  // console.log(data);
+  return (
+    <div className="flex justify-center">
+      <ul className="flex flex-col gap-2 list-style-none">
+        {data.map((item) => (
+          <li key={item.id} className="inline-block mr-4 mb-4">
+            <FieldOption data={item} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-// return (
-//   <ul>
-//     {fruits.map((fruit) => (
-//       <li key={fruit}>{fruit}</li>
-//     ))}
-//   </ul>
-// );
-
-export default FieldMenu;
+export default Fields;

@@ -6,7 +6,7 @@ import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
-  // Navigate,
+  Navigate,
 } from "react-router-dom";
 
 import initData from "./assets/roadmapInitialData.json";
@@ -23,9 +23,9 @@ console.log("init data in main ", initData);
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route index element={<FieldMenu />} />
+      <Route index element={<Navigate to="/fields" replace />} />
       <Route path="fields" element={<FieldMenu data={initData} />} />
-      <Route path="roadmap" element={<Roadmap data={{ initData }} />} />
+      <Route path="roadmap" element={<Roadmap data={initData} />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="*" element={<NotFound />} />
