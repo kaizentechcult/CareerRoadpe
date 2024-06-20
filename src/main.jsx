@@ -25,7 +25,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={<Navigate to="/fields" replace />} />
       <Route path="fields" element={<FieldMenu data={initData} />} />
-      <Route path="roadmap" element={<Roadmap data={initData} />} />
+      <Route path="roadmap/:id" element={<Roadmap data={initData} />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="*" element={<NotFound />} />

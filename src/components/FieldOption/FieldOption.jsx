@@ -4,7 +4,7 @@ function FieldOption({ data }) {
   //   console.log(data);
   return (
     <>
-      <Link to={`/roadmap/${data.title}`}>
+      <Link to={`/roadmap/${data.id}`}>
         <div className="flex relative bg-gray-900 px-5 py-3 rounded-lg">
           <img
             className="absolute top-1 left-[4px] h-[40px] w-[20px]"
