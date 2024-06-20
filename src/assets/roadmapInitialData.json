@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Pilot",
+    "description": "Take to the skies! Train to become a certified pilot and fly airplanes solo.",
+    "steps": [
+      {
+        "title": "Prepare & Fly",
+        "miniSteps": ["Ground School","Medical Exam","Simulator","Pre-Flight Checks"]
+      },
+      {
+        "title": "Master Maneuvers",
+        "miniSteps": ["Intro Flights","Essential Systems","Emergencies","Solo Flight"]
+      },
+      {
+        "title": "Refine Skills (Optional)",
+        "miniSteps": ["Ratings & Aircraft","Advanced Navigation","",""]
+      }
+    ]
+  },
+  {
+    "title": "Web Dev",
+    "description": "Craft interactive experiences! Learn to code and build modern websites & web apps.",
+    "steps": [
+      {
+        "title": "Code & Web Fundamentals",
+        "miniSteps": ["Languages (HTML, CSS, JS)","Ecosystem","Coding Practice","Tools"]
+      },
+      {
+        "title": "Front-End Development",
+        "miniSteps": ["Framework (e.g., React)","UI/UX Design","Responsive Design","Accessibility"]
+      },
+      {
+        "title": "Expand Expertise (Optional)",
+        "miniSteps": ["Back-End Development","Testing & Deployment","",""]
+      }
+    ]
+  },
+  {
+    "title": "Data Scientist",
+    "description": "Uncover insights! Use programming & statistics to solve problems with data analysis.",
+    "steps": [
+      {
+        "title": "Math, Stats & Programming",
+        "miniSteps": ["Math & Statistics","Python","Data Structures","Databases"]
+      },
+      {
+        "title": "Advanced Analysis Techniques",
+        "miniSteps": ["Machine Learning","Data Visualization","Data Wrangling","Cleaning"]
+      },
+      {
+        "title": "Showcase & Build Career",
+        "miniSteps": ["Personal Projects","Open Source (Optional)","Network","Build Portfolio"]
+      }
+    ]
+  },
+  {
+    "title": "Registered Nurse (RN)",
+    "description": "Provide direct patient care, administer medications, and collaborate with healthcare teams.",
+    "steps": [
+      {
+        "title": "Earn a Nursing Degree",
+        "miniSteps": ["ADN or BSN Program","Clinical Rotations","Pass NCLEX-RN Exam"]
+      },
+      {
+        "title": "Gain Experience & Specialize (Optional)",
+        "miniSteps": ["Entry-level RN position","Advanced Certifications (e.g., ICU, Pediatrics)"]
+      },
+      {
+        "title": "Advance Career (Optional)",
+        "miniSteps": ["Management Roles","Nurse Educator","Advanced Practice Registered Nurse (APRN)"]
+      }
+    ]
+  },
+  {
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  }
+]
