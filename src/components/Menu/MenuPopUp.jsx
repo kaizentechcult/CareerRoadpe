@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Menu from "./Menu"; // Import the Modal component
 import { Link } from "react-router-dom";
+import ProtoTypes from "prop-types";
 
-function MenuPopUp() {
+function MenuPopUp({ paths }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const togglePopup = () => {
@@ -11,8 +12,11 @@ function MenuPopUp() {
 
   return (
     <>
-      <button onClick={togglePopup}>
-        <img className="absolute top-2 right-2 h-10" src="menu.svg" />
+      <button
+        className={`${paths ? `hidden` : `flex`}`}
+        onClick={togglePopup}
+      >
+        <img className={`${paths ? `hidden` : `flex`} absolute top-2 right-2 h-10`} src="menu.svg" />
       </button>
       <Menu isOpen={isOpen} onClose={togglePopup}>
         {/* Modal content goes here */}
@@ -48,5 +52,9 @@ function MenuPopUp() {
     </>
   );
 }
+
+MenuPopUp.propTypes = {
+  paths: ProtoTypes.bool.isRequired,
+};
 
 export default MenuPopUp;
