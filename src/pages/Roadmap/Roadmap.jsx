@@ -1,4 +1,4 @@
-import React from "react";
+import ProtoTypes from "prop-types";
 import { useParams } from "react-router-dom";
 function Roadmap({ data }) {
   const { id } = useParams();
@@ -12,5 +12,9 @@ function Roadmap({ data }) {
     </>
   );
 }
+
+Roadmap.propTypes = {
+  data: ProtoTypes.array.isRequired,
+};
 
 export default Roadmap;
