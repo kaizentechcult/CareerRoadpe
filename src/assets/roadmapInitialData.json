@@ -14,7 +14,7 @@
       },
       {
         "title": "Refine Skills (Optional)",
-        "miniSteps": ["Ratings & Aircraft","Advanced Navigation","",""]
+        "miniSteps": ["Ratings & Aircraft","Advanced Navigation","bla","bla"]
       }
     ]
   },
@@ -63,7 +63,7 @@
     "steps": [
       {
         "title": "Earn a Nursing Degree",
-        "miniSteps": ["ADN or BSN Program","Clinical Rotations","Pass NCLEX-RN Exam"]
+        "miniSteps": ["ADN or BSN Program","Clinical Rotations","Pass NCLEX-RN Exam","asdf"]
       },
       {
         "title": "Gain Experience & Specialize (Optional)",

@@ -16,6 +16,7 @@ import Roadmap from "./pages/Roadmap/Roadmap";
 import SignIn from "./pages/Signin/SignIn";
 import SignUp from "./pages/Signup/SignUp";
 import NotFound from "./pages/NotFound/NotFound";
+import Testing from "./pages/Testing/testing";
 import "./index.css";
 
 console.log("init data in main ", initData);
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="roadmap/:id" element={<Roadmap data={initData} />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
+      <Route path="testing" element={<Testing />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

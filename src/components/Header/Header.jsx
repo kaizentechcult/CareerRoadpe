@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Menu from "../Menu/Menu";
 import ProtoTypes from "prop-types";
-
+import logoK from "/logoK.svg";
+import HamBurger from "/menu.svg";
 // import Menu from "./Menu"; // Import the Modal component
 // import { Link } from "react-router-dom";
 
@@ -30,7 +31,7 @@ function Header() {
       >
         <img
           className="h-20 md:flex md:justify-center md:items-center md:h-10"
-          src="logoK.svg"
+          src={logoK}
           alt="logo"
         />
         <div className="text-xl font-semibold md:-translate-x-5">
@@ -61,10 +62,13 @@ function Header() {
           } md:items-center md:space-y-7 text-white translate-x-12 absolute hidden md:flex-col md:justify-center md:translate-y-36 md:translate-x-[23vw] md:mt-20`}
         >
           <form action="">
-            <input type="text" className="md:w-[40vw] md:rounded-3xl md:h-12 text-black p-4" />
+            <input
+              type="text"
+              className="md:w-[40vw] md:rounded-3xl md:h-12 text-black p-4"
+            />
             <button className="border md:w-16 md:bg-purple-700 md:p-1 md:h-12 md:rounded-3xl md:-translate-x-16 absolute">
               <img
-                src=" public\search-interface-symbol.png"
+                src="search-interface-symbol.png"
                 alt=""
                 className="md:p-4 md:-translate-y-2 md:w-28"
               />
@@ -85,7 +89,7 @@ function Header() {
             className={`${
               showHeader ? `hidden` : `flex`
             } absolute top-2 right-2 h-10`}
-            src="menu.svg"
+            src={HamBurger}
           />
         </button>
         <Menu isOpen={isOpen} onClose={togglePopup}>
