@@ -1,4 +1,5 @@
 import FieldOption from "../../components/FieldOption/FieldOption";
+import ProtoTypes from "prop-types";
 function Fields({ data }) {
   // console.log(data);
   return (
@@ -13,5 +14,9 @@ function Fields({ data }) {
     </div>
   );
 }
+
+Fields.propTypes = {
+  data: ProtoTypes.array.isRequired,
+};
 
 export default Fields;
