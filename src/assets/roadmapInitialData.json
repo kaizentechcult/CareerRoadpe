@@ -208,4 +208,24 @@
       }
     ]
   }
+  ,
+  {
+    "id": 11,
+    "title": "Marketing Manager",
+    "description": "Develop and execute marketing strategies to promote products or services and drive sales.",
+    "steps": [
+      {
+        "title": "Build Marketing Foundation",
+        "miniSteps": ["Marketing Fundamentals","Market Research","Consumer Behavior"]
+      },
+      {
+        "title": "Marketing Channels & Analytics",
+        "miniSteps": ["Digital Marketing (SEO, SEM, Social Media)","Content Marketing","Marketing Analytics"]
+      },
+      {
+        "title": "Leadership & Strategy (Optional)",
+        "miniSteps": ["Marketing Team Management","Budget & Resource Allocation","Strategic Planning"]
+      }
+    ]
+  }
 ]

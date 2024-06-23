@@ -1,11 +1,10 @@
-import React from "react";
 import PropTypes from "prop-types";
 import initData from "../../assets/roadmapInitialData.json";
 const data = initData;
-const id = 0;
+// const id = 0;
 console.log(data);
-function Testing(props) {
-  const {} = props;
+function Testing() {
+  // const {hello} = props;
 
   return (
     <>
@@ -22,6 +21,8 @@ function Testing(props) {
   );
 }
 
-Testing.propTypes = {};
+Testing.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Testing;

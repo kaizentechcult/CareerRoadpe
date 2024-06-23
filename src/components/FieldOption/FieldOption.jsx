@@ -1,20 +1,21 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import ProtoTypes from "prop-types";
+
 function FieldOption({ data }) {
-  //   console.log(data);
   return (
     <>
-      <Link to={`/roadmap/${data.id}`}>
-        <div className="flex relative bg-gray-900 px-5 py-3 rounded-lg">
-          <img
-            className="absolute top-1 left-[4px] h-[40px] w-[20px]"
-            src="bookmark.svg"
-          />
-          <p className="px-3">{data.title}</p>
-        </div>
+      <Link
+        to={`/roadmap/${data.id}`}
+        className="flex bg-[#212020] py-4 px-8 rounded-full justify-center items-center w-full"
+      >
+        <img className="h-10" src="bookmark.svg" />
+        <p className="w-full px-3">{data.title}</p>
       </Link>
     </>
   );
 }
+FieldOption.propTypes = {
+  data: ProtoTypes.object.isRequired,
+};
 
 export default FieldOption;

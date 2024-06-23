@@ -12,11 +12,11 @@ function Roadmap({ data }) {
       <div className="bg-[#212020] flex flex-col gap-10 text-center items-center justify-center mx-8 p-4 rounded-lg md:flex md:flex-row md:-translate-x-[20vw] md:px-20 md:py-10 md:mx-auto">
         <div>Goal: {data[id]["title"]}</div>
         {data[id].steps.map((step) => (
-          <div className="flex flex-col ">
+          <div key={step} className="flex flex-col ">
             <div className=" border p-2">
               <h1>Step: {data[id].steps.findIndex((obj) => obj === step)}</h1>
               {step.miniSteps.map((miniSteps) => (
-                <p className="flex flex-col">
+                <p key={miniSteps} className="flex flex-col">
                   <img
                     className="h-10 items-center justify-center"
                     src={arrowDown}
@@ -29,7 +29,7 @@ function Roadmap({ data }) {
           </div>
         ))}
 
-        <h2 className="border border-[4px] border-[#f2a10a]">
+        <h2 className="border-[4px] border-[#f2a10a]">
           Congrats on becoming a {data[id]["title"]}
         </h2>
       </div>
