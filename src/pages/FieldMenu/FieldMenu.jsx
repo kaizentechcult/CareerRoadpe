@@ -7,7 +7,7 @@ function Fields({ data }) {
     <>
       <Search />
       <div className="flex justify-center ">
-        <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-16">
+        <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-8 md:p-16">
           {data.map((item) => (
             <FieldOption key={item.id} data={item} />
           ))}
