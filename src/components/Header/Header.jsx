@@ -19,17 +19,17 @@ function Header() {
         <Navbar />
         <div className="hidden md:flex z-10 p-4">
           <Link
-            className=" bg-white hover:bg-black hover:text-white text-black rounded-full "
+            className=" bg-white hover:bg-black hover:text-white text-black rounded-full p-4"
             to="/signin"
           >
             Sign in
           </Link>
         </div>
+      </div>
         <button onClick={handleMenu}>
           <FiMenu className="md:hidden absolute right-4 top-10 text-3xl" />
         </button>
         <Menu />
-      </div>
     </>
   );
 }
