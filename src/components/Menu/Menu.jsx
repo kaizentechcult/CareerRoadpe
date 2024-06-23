@@ -1,5 +1,6 @@
 import { IoIosClose } from "react-icons/io";
 import { Link } from "react-router-dom";
+import "./Menu.css"
 const Menu = () => {
   const links = [
     {
