@@ -26,10 +26,10 @@ function Header() {
           </Link>
         </div>
       </div>
-        <button onClick={handleMenu}>
-          <FiMenu className="md:hidden absolute right-4 top-10 text-3xl" />
-        </button>
-        <Menu />
+      <button onClick={handleMenu}>
+        <FiMenu className="md:hidden absolute right-4 top-10 text-3xl" />
+      </button>
+      <Menu />
     </>
   );
 }
