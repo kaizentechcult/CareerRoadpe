@@ -1,8 +1,16 @@
 import FieldOption from "../../components/FieldOption/FieldOption";
 import ProtoTypes from "prop-types";
 import Search from "../../components/Search/Search";
+import { useEffect, useState } from "react";
 function Fields({ data }) {
   // console.log(data);
+
+  let searchQuery = document.getElementById("search");
+  console.log(searchQuery);
+  searchQuery.addEventListener("keypress", () => {
+    console.log(searchQuery.value);
+  });
+
   return (
     <>
       <Search />
