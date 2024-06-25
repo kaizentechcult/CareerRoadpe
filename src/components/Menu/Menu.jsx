@@ -1,6 +1,6 @@
 import { IoIosClose } from "react-icons/io";
 import { Link } from "react-router-dom";
-import "./Menu.css"
+import "./Menu.css";
 const Menu = () => {
   const links = [
     {
@@ -13,7 +13,15 @@ const Menu = () => {
     },
     {
       to: "/fields",
-      text: "Fields",
+      text: "Roadmaps",
+    },
+    {
+      to: "/mentor",
+      text: "Mentor Sessions",
+    },
+    {
+      to: "/scholar",
+      text: "Scholarships",
     },
   ];
 
