@@ -9,7 +9,7 @@ const SignUp = () => {
           action=""
           className="text-white text-center flex flex-col gap-6 w-5/6"
         >
-          <h1 className="text-2xl font-semibold">Sign Up</h1>
+          <h1 className="text-2xl font-semibold">Sign In</h1>
           <Input name="email" id="email" placeholder="Enter your email" />
           <Input
             name="password"
