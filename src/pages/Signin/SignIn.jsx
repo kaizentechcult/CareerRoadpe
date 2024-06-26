@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
-    <div className="flex flex-col items-center h-screen">
-      <div className="flex flex-col justify-center items-center p-8 gap-6 bg-[#212020] rounded-xl w-1/3 py-20">
+    <div className="flex flex-col items-center h-screen ">
+      <div className="flex flex-col justify-center items-center p-8 gap-6 bg-[#212020] rounded-xl w-5/6 md:w-1/3 py-20">
         <form
           action=""
           className="text-white text-center flex flex-col gap-6 w-5/6"
         >
-          <h1 className="text-2xl font-semibold">Sign Up</h1>
+          <h1 className="text-2xl font-semibold">Sign In</h1>
           <Input name="email" id="email" placeholder="Enter your email" />
           <Input
             name="password"
