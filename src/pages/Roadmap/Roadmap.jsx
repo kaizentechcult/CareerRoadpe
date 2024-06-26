@@ -9,7 +9,7 @@ function Roadmap({ data }) {
 
   return (
     <>
-      <div className="bg-[#212020] flex flex-col gap-10 text-center items-center justify-center mx-8 p-4 rounded-lg md:flex md:flex-row md:-translate-x-[20vw] md:px-20 md:py-10 md:mx-auto">
+      <div className="bg-[#212020] mx-10 flex flex-col gap-10 text-center items-center justify-center rounded-lg md:flex md:flex-col md:mx-40 md:my-10">
         <div>Goal: {data[id]["title"]}</div>
         {data[id].steps.map((step) => (
           <div key={step} className="flex flex-col ">
@@ -21,7 +21,7 @@ function Roadmap({ data }) {
                     className="h-10 items-center justify-center"
                     src={arrowDown}
                   />
-                  {miniSteps}
+                  {miniSteps} {console.log(miniSteps)}
                 </p>
               ))}
             </div>

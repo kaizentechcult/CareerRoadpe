@@ -22,7 +22,7 @@ function Testing() {
 }
 
 Testing.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.array,
 };
 
 export default Testing;

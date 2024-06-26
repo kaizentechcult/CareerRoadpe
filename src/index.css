@@ -9,3 +9,12 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
 }
+
+.card-shadow:hover {
+  animation: card-shadow 0.3s ease-in-out forwards; /* Animation definition */
+}
+
+@keyframes card-shadow {
+  from { box-shadow: none; } /* No shadow initially */
+  to { box-shadow: 0px 0px 1px 1px rgb(101, 51, 188); } /* Shadow appears */
+}

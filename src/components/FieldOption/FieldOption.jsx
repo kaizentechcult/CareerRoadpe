@@ -7,11 +7,11 @@ function FieldOption({ data }) {
     <>
       <Link
         to={`/roadmap/${data.id}`}
-        className="flex bg-[#212020] py-4 px-8 rounded-xl justify-center items-center w-full"
+        className="flex card-shadow bg-[#212020] py-4 px-8 rounded-xl justify-center items-center w-full"
       >
         <img className="h-10" src="bookmark.svg" />
         <p className="w-full px-3">{data.title}</p>
-        <IoIosArrowForward  className="text-3xl"/>
+        <IoIosArrowForward className="text-3xl" />
       </Link>
     </>
   );
