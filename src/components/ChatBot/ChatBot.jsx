@@ -4,11 +4,11 @@ import Loader from "./components/Loader/Loader";
 import Markdown from "react-markdown";
 import generateAnswer from "./components/generateAnswer";
 
-const URL = import.meta.env.VITE_GEMINI_URL;
 function ChatBot() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
+  const URL = import.meta.env.VITE_GEMINI_URL;
 
   const geminiResponse = async () => {
     setLoading(true);
@@ -51,8 +51,8 @@ function ChatBot() {
               }
             }}
           />
-          <button onClick={geminiResponse} className="rounded bg-gradient-to-r">
-            <IoIosSearch className="text-white w-10 h-10 rounded p-1 bg-gradient-to-r" />
+          <button onClick={geminiResponse} className="rounded">
+            <IoIosSearch className="text-white w-10 h-10 rounded p-1" />
           </button>
         </div>
       </div>
