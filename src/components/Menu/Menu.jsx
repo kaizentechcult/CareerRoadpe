@@ -16,6 +16,10 @@ const Menu = () => {
       text: "Roadmaps",
     },
     {
+      to: "/chatbot",
+      text: "ChatBot",
+    },
+    {
       to: "/mentor",
       text: "Mentor Sessions",
     },
