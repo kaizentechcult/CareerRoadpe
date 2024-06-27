@@ -13,10 +13,16 @@ const Navbar = () => {
           <TiHome className="scale-[1.5]" />
           <p className="">Home</p>
         </Link>
-        <div className="p-4 flex gap-6 items-center hover:bg-blue-300 hover:text-black rounded-full">
-          <SiGooglegemini className="scale-[1.5]" />
+        {/* <div className="p-4 flex gap-6 items-center hover:bg-blue-300 hover:text-black rounded-full">
           <p className="">Generate with AI</p>
-        </div>
+          </div> */}
+        <Link
+          to="/chatbot"
+          className="p-4 flex gap-6 items-center  hover:bg-blue-300 hover:text-black rounded-full"
+        >
+          <SiGooglegemini className="scale-[1.5]" />
+          <p className="">ChatBot</p>
+        </Link>
         <Link
           to="/mentor"
           className="p-4 flex gap-6 items-center  hover:bg-blue-300 hover:text-black rounded-full"

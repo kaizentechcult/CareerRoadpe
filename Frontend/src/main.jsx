@@ -19,6 +19,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Testing from "./pages/Testing/testing";
 import MentorPage from "./pages/MentorPage/MentorPage";
 import Scholarships from "./pages/Scholarships/Scholarships";
+import ChatBot from "./components/ChatBot/ChatBot";
 import "./index.css";
 
 console.log("init data in main ", initData);
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
       <Route path="roadmap/:id" element={<Roadmap data={initData} />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
+      <Route path="chatbot" element={<ChatBot />} />
       <Route path="mentor" element={<MentorPage />} />
       <Route path="scholar" element={<Scholarships />} />
       <Route path="testing" element={<Testing />} />
