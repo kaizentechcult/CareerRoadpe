@@ -48,14 +48,15 @@ const SignUp = () => {
         </form>
         <div className="signin-link-container flex flex-col justify-center items-center gap-4">
           <a href="https://signup.hive.io/">Don&apos;t have an account?</a>
-          <span>OR</span>
-          <a href="https://signup.hive.io/">
+          {/* <span>OR</span> */}
+          OR
+          <Link to="/hivesign">
             <img
               className="bg-white rounded-3xl w-[8rem] h-[4rem] hover:bg-gray-300"
               src="hiveLogo.png"
               alt="Sign in with Hive"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

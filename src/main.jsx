@@ -20,6 +20,7 @@ import Testing from "./pages/Testing/testing";
 import MentorPage from "./pages/MentorPage/MentorPage";
 import Scholarships from "./pages/Scholarships/Scholarships";
 import ChatBot from "./components/ChatBot/ChatBot";
+import HiveSignIn from "./pages/HiveSignIn/HiveSignIn";
 import "./index.css";
 
 console.log("init data in main ", initData);
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="mentor" element={<MentorPage />} />
       <Route path="scholar" element={<Scholarships />} />
       <Route path="testing" element={<Testing />} />
+      <Route path="hivesign" element={<HiveSignIn />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
