@@ -11,12 +11,12 @@ function Roadmap({ data }) {
     <>
       <div className="bg-[#212020] mx-10 flex flex-col gap-10 text-center items-center justify-center rounded-lg md:flex md:flex-col md:mx-40 md:my-10">
         <div>Goal: {data[id]["title"]}</div>
-        {data[id].steps.map((step) => (
-          <div key={step} className="flex flex-col ">
+        {data[id].steps.map((step, index) => (
+          <div key={index} className="flex flex-col ">
             <div className=" border p-2">
               <h1>Step: {data[id].steps.findIndex((obj) => obj === step)}</h1>
-              {step.miniSteps.map((miniSteps) => (
-                <p key={miniSteps} className="flex flex-col">
+              {step.miniSteps.map((miniSteps, index) => (
+                <p key={index} className="flex flex-col">
                   <img
                     className="h-10 items-center justify-center"
                     src={arrowDown}

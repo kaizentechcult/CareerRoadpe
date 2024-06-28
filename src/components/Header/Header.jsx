@@ -20,9 +20,9 @@ function Header() {
         <div className="hidden md:flex z-10 p-4">
           <Link
             className=" bg-white hover:bg-black hover:text-white text-black rounded-full p-4"
-            to="/signin"
+            to="/hivesign"
           >
-            Sign in
+            log in
           </Link>
         </div>
       </div>
