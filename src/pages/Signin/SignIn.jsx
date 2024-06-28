@@ -47,15 +47,15 @@ const SignUp = () => {
           </button>
         </form>
         <div className="signin-link-container flex flex-col justify-center items-center gap-4">
-          <Link to="/signup">Don&apos;t have an account?</Link>
+          <a href="https://signup.hive.io/">Don&apos;t have an account?</a>
           <span>OR</span>
-          <Link to="/signup">
+          <a href="https://signup.hive.io/">
             <img
               className="bg-white rounded-3xl w-[8rem] h-[4rem] hover:bg-gray-300"
               src="hiveLogo.png"
               alt="Sign in with Hive"
             />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

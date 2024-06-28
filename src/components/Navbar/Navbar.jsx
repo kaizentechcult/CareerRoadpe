@@ -1,39 +1,35 @@
+import { Link } from "react-router-dom";
 import { SiGooglegemini } from "react-icons/si";
 import { IoPeople } from "react-icons/io5";
 import { TiHome } from "react-icons/ti";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+const icons = [
+  { path: "/fields", Icon: TiHome, text: "Home" },
+  { path: "/chatbot", Icon: SiGooglegemini, text: "ChatBot" },
+  { path: "/mentor", Icon: IoPeople, text: "Mentor Session" },
+  { path: "/scholar", Icon: IoPeople, text: "Scholarships" },
+];
+
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <div className="md:flex absolute w-full justify-center hidden rounded-full">
       <div className="bg-[#245399] flex rounded-full">
-        <Link
-          to="/fields"
-          className="p-6 flex gap-3 items-center hover:bg-blue-300 hover:text-black rounded-full"
-        >
-          <TiHome className="scale-[1.5]" />
-          <p className="">Home</p>
-        </Link>
-        <Link
-          to="/chatbot"
-          className="p-6 flex gap-3 items-center  hover:bg-blue-300 hover:text-black rounded-full"
-        >
-          <SiGooglegemini className="scale-[1.5]" />
-          <p className="">ChatBot</p>
-        </Link>
-        <Link
-          to="/mentor"
-          className="p-6 flex gap-3 items-center  hover:bg-blue-300 hover:text-black rounded-full"
-        >
-          <IoPeople className="scale-[1.5]" />
-          <p className="">Mentor Session</p>
-        </Link>
-        <Link
-          to="/scholar"
-          className="p-6 flex gap-3 items-center  hover:bg-blue-300 hover:text-black rounded-full"
-        >
-          <IoPeople className="scale-[1.5]" />
-          <p className="">Scholarships</p>
-        </Link>
+        {icons.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`p-6 flex gap-3 items-center hover:bg-blue-300 rounded-full
+                         ${
+                           location.pathname === item.path ? "text-[#000] bg-blue-300" : ""
+                         }`} 
+          >
+            <item.Icon className="scale-[1.5]" />
+            <p className="">{item.text}</p>
+          </Link>
+        ))}
       </div>
     </div>
   );
