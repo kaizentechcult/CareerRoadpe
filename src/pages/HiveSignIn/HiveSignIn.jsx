@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
-import { Link } from "react-router-dom";
 function HiveSignIn() {
   useState();
   const [username, setUsername] = React.useState("");
