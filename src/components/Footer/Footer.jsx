@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 
 function Footer() {
   return (
-    <footer className="mt-10 h-[20vh] flex justify-center items-center gap-10">
+    <footer className="scale-[0.7] md:scale-[1] mt-10 h-[20vh] flex justify-center items-center gap-10">
 
       <Logo />
       <div className="flex gap-10 justify-center items-center">
