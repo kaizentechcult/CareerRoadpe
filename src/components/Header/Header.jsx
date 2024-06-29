@@ -14,17 +14,17 @@ function Header() {
 
   return (
     <>
-      <div className="flex pt-4 justify-center md:justify-between items-center">
+      <div className="flex pt-4  justify-start  items-center">
         <Logo />
         <Navbar />
-        <div className="hidden md:flex z-10 p-4">
+        {/* <div className="hidden md:flex z-10 p-4">
           <Link
             className=" bg-white hover:bg-black hover:text-white text-black rounded-full p-4"
             to="/hivesign"
           >
             log in
           </Link>
-        </div>
+        </div> */}
       </div>
       <button onClick={handleMenu}>
         <FiMenu className="md:hidden absolute right-4 top-10 text-3xl" />

@@ -9,21 +9,23 @@ const icons = [
   { path: "/chatbot", Icon: SiGooglegemini, text: "ChatBot" },
   { path: "/mentor", Icon: IoPeople, text: "Mentor Session" },
   { path: "/scholar", Icon: IoPeople, text: "Scholarships" },
+  { path: "/articles", Icon: IoPeople, text: "Articles" },
+  { path: "/hivesign", Icon: IoPeople, text: "log in" },
 ];
 
 const Navbar = () => {
   const location = useLocation();
 
   return (
-    <div className="md:flex absolute w-full justify-center hidden rounded-full">
-      <div className="bg-[#245399] flex rounded-full">
+    <div className="md:flex absolute w-full justify-end hidden rounded-full">
+      <div className=" flex rounded-full">
         {icons.map((item) => (
           <Link
             key={item.path}
             to={item.path}
-            className={`p-6 flex gap-3 items-center hover:bg-blue-300 rounded-full
+            className={`p-4 flex gap-3 items-center hover:bg-blue-900 rounded-full
                          ${
-                           location.pathname === item.path ? "text-[#000] bg-blue-300" : ""
+                           location.pathname === item.path ? "text-[#000] bg-blue-600" : ""
                          }`} 
           >
             <item.Icon className="scale-[1.5]" />
