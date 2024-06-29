@@ -48,7 +48,7 @@ const people = [
     profession: "Theoretical Physicist & Cosmologist",
   },
   {
-    name: "Marie Kondo",
+    name: "Adolf Hitler",
     img: image7,
     link: "https://konmari.com/en",
     profession: "Tidying Expert & Author",
