@@ -20,7 +20,7 @@ function ChatBot() {
 
   return (
     <>
-      <div className="bg-slate-950 h-fit  md:w-full overflow-x-hidden md:p-20 flex justify-center items-center pb-32 w-[90%] m-auto">
+      <div className=" h-fit  md:w-full overflow-x-hidden md:p-20 flex justify-center items-center pb-32 w-[90%] m-auto">
         {loading ? (
           <div className="p-8">
             <Loader />
@@ -28,17 +28,17 @@ function ChatBot() {
         ) : (
           <>
             {answer ? (
-              <div className="bg-slate-900 overflow-auto text-white w-fit pr-4 md:p-6 p-4 m-2 md:ml-12 rounded-2xl ">
+              <div className=" overflow-auto text-white w-fit pr-4 md:p-6 p-4 m-2 md:ml-12 rounded-2xl ">
                 <div className="md:text-sm text-xs whitespace-break-spaces">
                   <Markdown>{answer}</Markdown>
                 </div>
               </div>
             ) : (
-              <></>
+              <><p className="font-bold text-4xl ">Ask Any Doubts</p></>
             )}
           </>
         )}
-        <div className=" flex justify-center items-center  fixed bottom-0 p-8 w-full border-[#fff]">
+        <div className="flex justify-center items-center  fixed bottom-0 p-8 w-full border-[#fff]">
           <input
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
