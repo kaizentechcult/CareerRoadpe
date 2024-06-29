@@ -23,6 +23,7 @@ import ChatBot from "./components/ChatBot/ChatBot";
 import HiveSignIn from "./pages/HiveSignIn/HiveSignIn";
 import ArticleSection from "./pages/ArticleSection/ArticleSection";
 import "./index.css";
+import Article from "./pages/Article/Article.jsx";
 
 console.log("init data in main ", initData);
 
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="testing" element={<Testing />} />
       <Route path="hivesign" element={<HiveSignIn />} />
       <Route path="articles" element={<ArticleSection data={articles}/>} />
+      <Route path="articles/:id" element={<Article data={articles} />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
