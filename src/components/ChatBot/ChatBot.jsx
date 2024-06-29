@@ -43,7 +43,7 @@ function ChatBot() {
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             type="text  "
-            className="bg-[#0a0d2d6a] backdrop-blur-lg p-4 w-[90%] md:w-[40%] rounded-xl outline-none focus:ring-0"
+            className="bg-[#0a0d2d6a] border-[2px] border-blue-300 backdrop-blur-lg p-4 w-[90%] md:w-[40%] rounded-xl outline-none focus:ring-0"
             placeholder="Enter Your Prompt"
             onKeyDown={(e) => {
               if (e.key === "Enter") {
