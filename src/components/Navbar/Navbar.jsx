@@ -25,8 +25,12 @@ const Navbar = () => {
             to={item.path}
             className={`p-4 flex gap-3 items-center hover:bg-blue-900 rounded-full
                          ${
-                           location.pathname === item.path ? "text-[#000] bg-blue-600" : ""
-                         }`} 
+
+                           location.pathname === item.path
+                             ? "text-[#000] bg-blue-300"
+                             : ""
+                         }`}
+
           >
             <item.Icon className="scale-[1.5]" />
             <p className="">{item.text}</p>
