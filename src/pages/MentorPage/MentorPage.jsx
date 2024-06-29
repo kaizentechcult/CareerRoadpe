@@ -4,10 +4,10 @@ const MentorPage = () => {
   return (
     <div>
       <h1 className="text-white text-center text-4xl font-bold p-4">Our Mentors</h1>
-      <div className="flex gap-5 flex-wrap justify-center items-center">
+      <div className="flex flex-col gap-5 flex-wrap justify-center items-center">
         {team.map((member) => (
           <div
-            className="rounded-xl bg-gray-800 text-white p-4 flex gap-8 w-1/3"
+            className="rounded-xl bg-gray-800 text-white p-4 flex gap-8 md:w-1/3 w-[90%]"
             key={member.id}
           >
             <div>
