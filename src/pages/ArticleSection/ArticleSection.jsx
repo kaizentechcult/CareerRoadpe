@@ -1,9 +1,10 @@
 import React from 'react'
 
-const ArticleSection = () => {
+const ArticleSection = (data) => {
+  console.log(data)
   return (
     <div>
-      <h1>helloo this is article section</h1>
+      <h1>{data.data[0].title}</h1>
     </div>
   )
 }

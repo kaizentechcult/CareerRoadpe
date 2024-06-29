@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import articles from "./assets/articles.js"
 import {
   RouterProvider,
   Route,
@@ -23,7 +23,6 @@ import ChatBot from "./components/ChatBot/ChatBot";
 import HiveSignIn from "./pages/HiveSignIn/HiveSignIn";
 import ArticleSection from "./pages/ArticleSection/ArticleSection";
 import "./index.css";
-import Blog from "./components/Blog/Blog";
 
 console.log("init data in main ", initData);
 
@@ -40,7 +39,7 @@ const router = createBrowserRouter(
       <Route path="scholar" element={<Scholarships />} />
       <Route path="testing" element={<Testing />} />
       <Route path="hivesign" element={<HiveSignIn />} />
-      <Route path="articles" element={<Blog/>} />
+      <Route path="articles" element={<ArticleSection data={articles}/>} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
