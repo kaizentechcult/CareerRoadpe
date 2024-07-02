@@ -28,7 +28,7 @@ function ChatBot() {
         ) : (
           <>
             {answer ? (
-              <div className=" overflow-auto text-white w-fit pr-4 md:p-6 p-4 m-2 md:ml-12 rounded-2xl ">
+              <div className=" overflow-auto text-white w-fit pr-4 md:p-6 p-4 m-2 md:ml-12 rounded-2xl flex">
                 <div className="md:text-sm text-xs whitespace-break-spaces">
                   <Markdown>{answer}</Markdown>
                 </div>
