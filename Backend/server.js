@@ -26,6 +26,9 @@ console.log(users);
 app.get("/", (req, res) => {
   res.send(users);
 });
+app.get("/hello", (req, res) => {
+  res.send("users");
+});
 
 app.listen(8080, () => {
   console.log("Sever is listening to port 8080");
