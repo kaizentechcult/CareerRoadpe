@@ -1,7 +1,7 @@
-import React from 'react'
+// import React from 'react'
 import PropTypes from 'prop-types'
 import { useParams } from "react-router-dom";
-import articles from '../../assets/articles';
+// import articles from '../../assets/articles';
 
 const Article = ({data}) => {
     const { id } = useParams();
@@ -22,7 +22,7 @@ const Article = ({data}) => {
 }
 
 Article.propTypes = {
-  
+  data: PropTypes.array.isRequired,
 }
 
 export default Article

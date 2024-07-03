@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import initData from "../../assets/roadmapInitialData.json";
 const data = initData;
 // const id = 0;
-console.log(data);
+// console.log(data);
 function Testing() {
   // const {hello} = props;
 

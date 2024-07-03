@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ada Lovelace",
+    "img": "/Team/Adista.jpg",
+    "link": "https://en.wikipedia.org/wiki/Ada_Lovelace",
+    "profession": "Mathematician & Computer Programmer"
+  },
+  {
+    "name": "Marie Curie",
+    "img": "/Team/Aditya.jpg",
+    "link": "https://en.wikipedia.org/wiki/Marie_Curie",
+    "profession": "Physicist & Chemist"
+  },
+  {
+    "name": "Alan Turing",
+    "img": "/Team/Avinash.jpg",
+    "link": "https://en.wikipedia.org/wiki/Alan_Turing",
+    "profession": "Computer Scientist & Mathematician"
+  },
+  {
+    "name": "Tim Berners-Lee",
+    "img": "/Team/Ayush.jpg",
+    "link": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+    "profession": "Computer Scientist & Inventor of World Wide Web"
+  },
+  {
+    "name": "Grace Hopper",
+    "img": "/Team/Kanak.jpg",
+    "link": "https://en.wikipedia.org/wiki/Grace_Hopper",
+    "profession": "Computer Scientist & U.S. Navy Rear Admiral"
+  },
+  {
+    "name": "Stephen Hawking",
+    "img": "/Team/Krish.jpg",
+    "link": "https://en.wikipedia.org/wiki/Stephen_Hawking",
+    "profession": "Theoretical Physicist & Cosmologist"
+  },
+  {
+    "name": "Adolf Hitler",
+    "img": "/Team/Manisha.jpg",
+    "link": "https://konmari.com/en",
+    "profession": "Tidying Expert & Author"
+  },
+  {
+    "name": "Elon Musk",
+    "img": "/Team/Piyush.jpg",
+    "link": "https://en.wikipedia.org/wiki/Elon_Musk",
+    "profession": "Entrepreneur & Business Magnate"
+  },
+  {
+    "name": "Oprah Winfrey",
+    "img": "/Team/Shivansh.jpg",
+    "link": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+    "profession": "Talk Show Host & Media Proprietor"
+  },
+  {
+    "name": "Oprah Winfrey",
+    "img": "/Team/Shree.jpg",
+    "link": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+    "profession": "Talk Show Host & Media Proprietor"
+  }
+]

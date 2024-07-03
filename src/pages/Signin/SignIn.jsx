@@ -16,7 +16,7 @@ const SignUp = () => {
     setPassword(e.target.value);
   };
 
-  console.log(username, password);
+  // console.log(username, password);
   return (
     <div className="flex flex-col items-center h-screen">
       <div className="flex flex-col justify-center items-center p-4 gap-6 bg-[#212020] rounded-xl py-10 w-5/6 md:w-[25%]">

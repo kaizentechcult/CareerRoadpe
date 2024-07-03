@@ -4,8 +4,8 @@ import arrowDown from "/ArrowFacingDown.svg";
 function Roadmap({ data }) {
   const { id } = useParams();
 
-  console.log("data in roadmap ", data);
-  console.log(data[id]["title"], data[id].steps[0].miniSteps[0]);
+  // console.log("data in roadmap ", data);
+  // console.log(data[id]["title"], data[id].steps[0].miniSteps[0]);
 
   return (
     <>

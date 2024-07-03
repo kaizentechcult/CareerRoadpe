@@ -1,6 +1,7 @@
 import React from "react";
+// import axios from "axios";
 import ReactDOM from "react-dom/client";
-import articles from "./assets/articles.js"
+import articles from "./assets/articles.js";
 import {
   RouterProvider,
   Route,
@@ -9,10 +10,10 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import initData from "./assets/roadmapInitialData.json";
+// import initData from "./assets/roadmapInitialData.json";
 import App from "./App";
 import FieldMenu from "./pages/FieldMenu/FieldMenu";
-import Roadmap from "./pages/Roadmap/Roadmap";
+// import Roadmap from "./pages/Roadmap/Roadmap";
 import SignIn from "./pages/Signin/SignIn";
 import SignUp from "./pages/Signup/SignUp";
 import NotFound from "./pages/NotFound/NotFound";
@@ -25,14 +26,17 @@ import ArticleSection from "./pages/ArticleSection/ArticleSection";
 import "./index.css";
 import Article from "./pages/Article/Article.jsx";
 
-console.log("init data in main ", initData);
+// useEffect(() => {
+
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Navigate to="/fields" replace />} />
-      <Route path="fields" element={<FieldMenu data={initData} />} />
-      <Route path="roadmap/:id" element={<Roadmap data={initData} />} />
+      <Route path="fields" element={<FieldMenu  />} />
+      {/* <Route path="roadmap/:id" element={<Roadmap data={initData} />} /> */}
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="chatbot" element={<ChatBot />} />
@@ -40,7 +44,7 @@ const router = createBrowserRouter(
       <Route path="scholar" element={<Scholarships />} />
       <Route path="testing" element={<Testing />} />
       <Route path="hivesign" element={<HiveSignIn />} />
-      <Route path="articles" element={<ArticleSection data={articles}/>} />
+      <Route path="articles" element={<ArticleSection data={articles} />} />
       <Route path="articles/:id" element={<Article data={articles} />} />
       <Route path="*" element={<NotFound />} />
     </Route>

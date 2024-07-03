@@ -1,15 +1,31 @@
 import FieldOption from "../../components/FieldOption/FieldOption";
-import ProtoTypes from "prop-types";
+// import ProtoTypes from "prop-types";
 import Search from "../../components/Search/Search";
 import { useState } from "react";
+import axios from "axios";
 
-function Fields({ data }) {
-  const [shownData, setShownData] = useState(data);
+function Fields() {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://careerroadpe.onrender.com/"); // Backend server URL
+      console.log(response);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const [shownData, setShownData] = useState();
+  async () => {
+    setShownData(await fetchData());
+  };
+
+  console.log(shownData);
 
   const searchFunction = (event) => {
     event.preventDefault();
     const searchQuery = document.getElementById("search").value;
-    const temp = data.filter((object) => {
+    const temp = shownData.filter((object) => {
       return object.title.includes(searchQuery);
     });
 
@@ -30,8 +46,8 @@ function Fields({ data }) {
   );
 }
 
-Fields.propTypes = {
-  data: ProtoTypes.array.isRequired,
-};
+// Fields.propTypes = {
+//   data: ProtoTypes.array.isRequired,
+// };
 
 export default Fields;
