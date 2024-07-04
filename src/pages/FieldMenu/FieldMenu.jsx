@@ -1,5 +1,6 @@
 import FieldOption from "../../components/FieldOption/FieldOption";
 import Search from "../../components/Search/Search";
+import Loader from "../../components/ChatBot/components/Loader/Loader";
 import { useState, useEffect } from "react";
 
 function Fields() {
@@ -41,11 +42,15 @@ function Fields() {
     <>
       <Search params={{ searchFunction }} />
       <div className="flex justify-center ">
-        <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-8 md:p-16">
-          {data.map((item) => (
-            <FieldOption key={item.id} data={item} />
-          ))}
-        </ul>
+        {data.length === 0 ? (
+          <Loader />
+        ) : (
+          <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-8 md:p-16">
+            {data.map((item) => (
+              <FieldOption key={item.id} data={item} />
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
