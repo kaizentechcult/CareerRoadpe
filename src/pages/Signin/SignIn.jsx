@@ -1,66 +1,124 @@
-import React, { useState } from "react";
-import Input from "../../components/Input/Input";
-// import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { FcGoogle } from "react-icons/fc";
+import { HiMail, HiLockClosed } from "react-icons/hi";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
-const SignUp = () => {
-  useState();
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { login, loginWithGoogle } = useAuth();
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setError("");
+      setIsLoading(true);
+      await login(email, password);
+      navigate("/fields");
+    } catch (err) {
+      setError("Failed to sign in: " + err.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handleGoogleSignIn = async () => {
+    try {
+      setError("");
+      setIsLoading(true);
+      await loginWithGoogle();
+      navigate("/fields");
+    } catch (err) {
+      setError("Failed to sign in with Google: " + err.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  // console.log(username, password);
   return (
-    <div className="flex flex-col items-center h-screen">
-      <div className="flex flex-col justify-center items-center p-4 gap-6 bg-[#212020] rounded-xl py-10 w-5/6 md:w-[25%]">
-        <form
-          action=""
-          className="text-white text-center flex flex-col gap-6 w-5/6"
-        >
-          <h1 className="text-2xl font-semibold">Sign In</h1>
-          <Input
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-            value={username}
-            onchange={handleUsernameChange}
-          />
-          <Input
-            name="password"
-            id="password"
-            placeholder="Enter your password"
-            value={password}
-            onchange={handlePasswordChange}
-          />
-          <button
-            className="bg-[#4F7EC3] hover:text-white rounded-3xl px-6 py-3"
-            type="submit"
-          >
-            Sign Up
-          </button>
-        </form>
-        <div className="signin-link-container flex flex-col justify-center items-center gap-4">
-          <a href="https://signup.hive.io/">Don&apos;t have an account?</a>
-          {/* <span>OR</span> */}
-          OR
-          <Link to="/hivesign">
-            <img
-              className="bg-white rounded-3xl w-[8rem] h-[4rem] hover:bg-gray-300"
-              src="hiveLogo.png"
-              alt="Sign in with Hive"
-            />
-          </Link>
+    <div className="min-h-screen flex items-center justify-center bg-secondary-50 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+        <div>
+          <h2 className="text-center text-3xl font-bold text-secondary-900">
+            Welcome back
+          </h2>
+          <p className="mt-2 text-center text-sm text-secondary-600">
+            Sign in to your account to continue
+          </p>
         </div>
+
+        {error && (
+          <div className="bg-error-light/10 text-error-main p-3 rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="space-y-4">
+            <Input
+              label="Email address"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              startIcon={<HiMail className="h-5 w-5 text-secondary-400" />}
+              placeholder="Enter your email"
+            />
+
+            <Input
+              label="Password"
+              type="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              startIcon={<HiLockClosed className="h-5 w-5 text-secondary-400" />}
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div>
+            <Button
+              type="submit"
+              className="w-full"
+              isLoading={isLoading}
+            >
+              Sign in
+            </Button>
+          </div>
+        </form>
+
+        <div className="relative my-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-secondary-200"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-white text-secondary-500">Or continue with</span>
+          </div>
+        </div>
+
+        <Button
+          variant="outline"
+          className="w-full"
+          onClick={handleGoogleSignIn}
+          isLoading={isLoading}
+        >
+          <FcGoogle className="h-5 w-5 mr-2" />
+          Sign in with Google
+        </Button>
+
+        <p className="mt-4 text-center text-sm text-secondary-600">
+          Don&apos;t have an account?{" "}
+          <Link to="/signup" className="font-medium text-primary-600 hover:text-primary-500">
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );
-};
-
-export default SignUp;
+}

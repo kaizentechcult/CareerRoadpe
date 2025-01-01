@@ -1,50 +1,52 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-const ArticleSection = () => {
-  const [data, setData] = useState([]);
+import { useState, useEffect } from 'react';
+import ArticleCard from '../../components/ui/ArticleCard';
+import Loader from '../../components/ui/Loader';
+
+export default function ArticleSection() {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchArticles = async () => {
       try {
-        // const response = await fetch("http://localhost:8080/roadmap");
-        const response = await fetch(
-          "https://careerroadpe.onrender.com/article"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
+        const response = await fetch('https://careerroadpe.onrender.com/article');
+        if (!response.ok) throw new Error('Failed to fetch articles');
         const data = await response.json();
-        setData(data);
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setArticles(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
+    fetchArticles();
   }, []);
 
+  if (loading) return <Loader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
+
   return (
-    <div className="flex justify-center  flex-col">
-      <h1 className="text-center text-5xl text-bold">Article Page</h1>
-      <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-8 md:p-16">
-        {data.map((articleData, index) => (
-          <Link
-            to={`${index}`}
-            className="flex flex-col card-shadow bg-[#212020] border-[1px] border-white py-4 px-8 rounded-xl justify-center items-center w-full"
-            key={articleData.id}
-          >
-            {" "}
-            <h1 className="font-bold">{articleData.title}</h1>
-            <div className="w-full bg-white h-[0.1px]"> </div>
-            <br />
-            <p>{articleData.content.slice(0, 40)}...</p>
-          </Link>
-        ))}
-      </ul>
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
+            Latest Articles
+          </h1>
+          <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+            Discover insights and guidance to help you make informed career decisions
+          </p>
+        </div>
+
+        {/* Articles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+      </div>
     </div>
   );
-};
-
-export default ArticleSection;
+}

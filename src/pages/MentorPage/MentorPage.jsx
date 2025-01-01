@@ -1,54 +1,52 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import MentorCard from '../../components/ui/MentorCard';
+import Loader from '../../components/ui/Loader';
 
-const MentorPage = () => {
-  const [data, setData] = useState([]);
+export default function MentorPage() {
+  const [mentors, setMentors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchMentors = async () => {
       try {
-        // const response = await fetch("http://localhost:8080/roadmap");
-        const response = await fetch("https://careerroadpe.onrender.com/team");
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
+        const response = await fetch('https://careerroadpe.onrender.com/team');
+        if (!response.ok) throw new Error('Failed to fetch mentors');
         const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setMentors(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
+    fetchMentors();
   }, []);
 
+  if (loading) return <Loader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
+
   return (
-    <div>
-      <h1 className="text-white text-center text-4xl font-bold p-4">
-        Our Mentors
-      </h1>
-      <div className="flex flex-col md:flex-row gap-5 flex-wrap justify-center items-center">
-        {data.map((member) => (
-          <div
-            className="rounded-xl bg-gray-800 text-white p-4 flex gap-8 md:w-1/3 w-[90%]"
-            key={member.id}
-          >
-            <div>
-              <img
-                src={member.img}
-                alt="member"
-                className="w-[7rem] h-[7rem] rounded-full"
-              />
-            </div>
-            <div className="w-1/2 flex justify-evenly flex-col">
-              <p className="font-bold">{member.name}</p>
-              <p>{member.profession}</p>
-            </div>
-          </div>
-        ))}
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
+            Meet Our Mentors
+          </h1>
+          <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+            Connect with experienced professionals who can guide you on your career journey
+          </p>
+        </div>
+
+        {/* Mentors Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {mentors.map((mentor) => (
+            <MentorCard key={mentor.id} mentor={mentor} />
+          ))}
+        </div>
       </div>
     </div>
   );
-};
-
-export default MentorPage;
+}

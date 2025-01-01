@@ -1,27 +1,31 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Search = (params) => {
+import { HiSearch } from "react-icons/hi";
+import PropTypes from "prop-types";
+
+export default function Search({ onSearch }) {
   return (
-    <div className="flex flex-col justify-center items-center pt-16 gap-6">
-      <form className="bg-white rounded-full flex w-4/5 md:w-1/2">
+    <form onSubmit={onSearch} className="max-w-2xl mx-auto">
+      <div className="relative">
         <input
-          placeholder="search roadmap"
           type="text"
           id="search"
-          className="p-4 md:p-6 rounded-full outline-none w-full text-black"
+          name="search"
+          className="w-full pl-12 pr-4 py-3 bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 text-secondary-900 dark:text-white placeholder-secondary-400 dark:placeholder-secondary-500 transition-all duration-200"
+          placeholder="Search career fields..."
         />
-        <button onClick={params.params.searchFunction}>
-          <FontAwesomeIcon
-            className="md:scale-[1.5] bg-blue-900 p-3 rounded-full text-[white] mx-4"
-            icon={faMagnifyingGlass}
-          />
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <HiSearch className="h-5 w-5 text-secondary-400 dark:text-secondary-500" />
+        </div>
+        <button
+          type="submit"
+          className="absolute inset-y-1 right-1 px-4 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-secondary-800"
+        >
+          Search
         </button>
-      </form>
-      <p className="text-3xl md:text-5xl font-semibold text-center">
-        Search Roadmap
-      </p>
-    </div>
+      </div>
+    </form>
   );
-};
+}
 
-export default Search;
+Search.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};

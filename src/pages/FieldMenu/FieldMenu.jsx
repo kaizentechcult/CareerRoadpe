@@ -1,59 +1,74 @@
-import FieldOption from "../../components/FieldOption/FieldOption";
-import Search from "../../components/Search/Search";
-import Loader from "../../components/ChatBot/components/Loader/Loader";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import SearchInput from '../../components/ui/SearchInput';
+import Loader from '../../components/ui/Loader';
+import FieldOption from '../../components/FieldOption/FieldOption';
 
-function Fields() {
-  const [data, setData] = useState([]);
+export default function FieldMenu() {
+  const [fields, setFields] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchFields = async () => {
       try {
-        // const response = await fetch("http://localhost:8080/roadmap");
-        const response = await fetch(
-          "https://careerroadpe.onrender.com/roadmap"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
+        const response = await fetch('https://careerroadpe.onrender.com/roadmap');
+        if (!response.ok) throw new Error('Failed to fetch fields');
         const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setFields(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
+    fetchFields();
   }, []);
 
-  const searchFunction = (event) => {
-    event.preventDefault();
-    const searchQuery = document.getElementById("search").value;
-    const temp = data.filter((object) => {
-      return object.title.includes(searchQuery);
-    });
+  const filteredFields = fields.filter(field =>
+    field.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-    console.log(temp);
-    setData(temp);
-  };
+  if (loading) return <Loader />;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <>
-      <Search params={{ searchFunction }} />
-      <div className="flex justify-center ">
-        {data.length === 0 ? (
-          <Loader />
-        ) : (
-          <ul className="flex flex-col gap-6 list-style-none md:grid md:grid-cols-2 w-full p-8 md:p-16">
-            {data.map((item) => (
-              <FieldOption key={item.id} data={item} />
-            ))}
-          </ul>
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
+            Explore Career Fields
+          </h1>
+          <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto mb-8">
+            Discover various career paths and find the one that matches your interests
+          </p>
+          
+          {/* Search */}
+          <div className="max-w-md mx-auto">
+            <SearchInput
+              placeholder="Search fields..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Fields Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredFields.map((field) => (
+            <FieldOption key={field.id} field={field} />
+          ))}
+        </div>
+
+        {/* No Results */}
+        {filteredFields.length === 0 && (
+          <div className="text-center text-secondary-600 dark:text-secondary-400 mt-8">
+            No fields found matching your search.
+          </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
-
-export default Fields;

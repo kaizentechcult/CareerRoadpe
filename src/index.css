@@ -4,10 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #09091f;
-  color: white;
-  font-family: "Poppins", sans-serif;
+@layer base {
+  html {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    @apply bg-secondary-50;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
 
 .card-shadow:hover {
